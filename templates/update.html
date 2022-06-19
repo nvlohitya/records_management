@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <h1>Update Student</h1>
+    <form action="/student/{{student.student_id}}/update" method="POST" id="update-student-form">
+
+        <div id="elements">
+            <label>Roll Number:</label>
+            <input type="text" name="roll" value="{{student.roll_number}}" disabled />
+        </div>
+        <div id="elements">
+            <label>First Name:</label>
+            <input type="text" name="f_name" value="{{student.first_name}}" required />
+        </div>
+        <div id="elements">
+            <label>Last Name:</label>
+            <input type="text" name="l_name" value="{{student.last_name}}" />
+        </div>
+        <div>
+            
+            <label for="courses">Select Course: </label>
+            <select name="course" id="courses">
+            {% for course in courses %}
+            <option value="{{course.course_id}}">{{course.course_name}}</option>
+            {% endfor %}
+            </select>
+            </div>
+        <div id="elements"> 
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+
+</html>

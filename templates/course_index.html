@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <h1>Courses list</h1>
+    <table id="all-courses">
+        <tr>
+            <th>SNo</th>
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>Course Description</th>
+            <th>Actions</th>
+        </tr>
+        {% for i in range(rows|length) %}
+        <tr>
+
+            <td>{{i+1}}</td>
+            <td><a href="/course/{{rows[i].course_id}}">{{rows[i].course_code}}</a></td>
+            <td>{{rows[i].course_name}}</td>
+            <td>{{rows[i].course_description}}</td>
+            <td>
+                <a href="/course/{{rows[i].course_id}}/update" type="button">Update</a>
+                <a href="/course/{{rows[i].course_id}}/delete" type="button">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/course/create" id="center">+Add course</a>
+    <a href="/" id="right">Go to Students</a>
+</body>
+
+</html>

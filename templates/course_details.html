@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <h1 id="center">Course Details</h1>'
+    <table id="course-detail">
+        <tr>
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>Course Description</th>
+        </tr>
+        <tr>
+            <td>{{course.course_code}}</td>
+            <td>{{course.course_name}}</td>
+            <td>{{course.course_description}}</td>
+        </tr>
+    </table>
+
+
+    <h1 id="center">Enrollment list</h1>
+    <table id="course-table">
+        <tr>
+            <td> <b>S.No</b> </td>
+            <td><b>Roll No </b> </td>
+            <td><b> Student First Name</b> </td>
+            <td><b>Student Last Name</b> </td>            
+        </tr>
+        {% for i in range(course.students|length) %}
+        <tr>
+            <td>{{i + 1}}</td>
+            <td>{{course.students[i].roll_number}}</td>
+            <td>{{course.students[i].first_name}}</td>
+            <td>{{course.students[i].last_name}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/courses" id="center">Go Back</a>
+    
+
+
+</body>
+
+</html>

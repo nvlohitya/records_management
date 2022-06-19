@@ -1,0 +1,14 @@
+#center{
+    display: block;
+    margin: 0px 70px;
+}
+#elements{
+    margin: 27px 15px;
+}
+
+#right{
+    position: absolute;
+    right: 70px;
+    top: 30px;
+    
+}
