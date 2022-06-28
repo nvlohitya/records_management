@@ -12,7 +12,6 @@ cd records_management
 ```bash
 python3 -m venv venv # use "py -m venv venv" for windows
 ./venv/Scripts/activate
-pip install -r requirements.txt
 ```
 
 ### Start Servers
